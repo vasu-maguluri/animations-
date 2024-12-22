@@ -1,0 +1,58 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.parent{
+  /* border: 2px solid black; */
+  width: 700px;
+  height: 600px;
+  position: relative;
+  
+}
+.child{
+    display: flex;
+    gap: 30px; 
+    justify-content: center;
+    padding: 30px;
+}
+button{
+    font-size: 25px;
+    padding: 30px;
+    background-color:aqua;
+    color:black;
+    cursor: pointer;
+}
+.child2 img{
+    /* border: 2px solid black; */
+    position: absolute;
+    top: 40%;
+    left:30%;    
+    transition: 0.3s ease;
+    display: inline block;
+    
+}
+@keyframes rotator {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.slow:hover ~ .child2 img {   
+    animation: rotator 4s infinite linear;
+}
+
+.medium:hover ~ .child2 img {
+    animation: rotator 2s infinite linear;
+}
+
+.speed:hover ~ .child2 img {
+    animation: rotator 1s infinite linear;
+}
+
+.full-speed:hover ~ .child2 img {
+    animation: rotator 0.5s infinite linear;
+}
